@@ -732,13 +732,6 @@
     <div class="lang-btn" onclick="selectAppLanguage('Zulu')">Zulu</div>
     <div class="lang-btn" onclick="selectAppLanguage('Xhosa')">Xhosa</div>
     <div class="lang-btn" onclick="selectAppLanguage('Sotho')">Sotho</div>
-    <div class="lang-btn" onclick="selectAppLanguage('Tswana')">Tswana</div>
-    <div class="lang-btn" onclick="selectAppLanguage('Venda')">Venda</div>
-    <div class="lang-btn" onclick="selectAppLanguage('Tsonga')">Tsonga</div>
-    <div class="lang-btn" onclick="selectAppLanguage('Swati')">Swati</div>
-    <div class="lang-btn" onclick="selectAppLanguage('Ndebele')">Ndebele</div>
-    <div class="lang-btn" onclick="selectAppLanguage('Pedi')">Pedi</div>
-    <div class="lang-btn" onclick="selectAppLanguage('Afrikaans')">Afrikaans</div>
     <div class="lang-btn" onclick="selectAppLanguage('English')">English</div>
   </div>
 </div>
@@ -1729,6 +1722,11 @@
   });
 
   window.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('izwiLanguage');
+    if (savedLang) {
+      currentLanguage = savedLang;
+      updateInterfaceLanguage(savedLang);
+    }
     loadArchiveAssets();
   });
 </script>
